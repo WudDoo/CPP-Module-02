@@ -6,11 +6,11 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:53 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/16 17:30:07 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:16:47 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../inc/Fixed.hpp"
 
 Fixed::Fixed( void ) {
 	std::cout << "Default constructor called" << std::endl;
@@ -33,9 +33,11 @@ Fixed& Fixed::operator= ( const Fixed &fixed ) {
 }
 
 int	Fixed::getRawBits( void ) const {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->numberValue);
 }
 
 void	Fixed::setRawBits( int const raw ) {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->numberValue = raw;
 }
