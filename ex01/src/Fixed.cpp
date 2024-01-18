@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:53 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/18 16:59:57 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:30:26 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ Fixed::Fixed( const int integer ) {
 	this->numberValue = integer << this->fractionalBits;
 }
 
-Fixed::Fixed( const float number ) { //WRONG
+Fixed::Fixed( const float number ) {
 	std::cout << "Float constructor called" << std::endl;
-	this->numberValue = number;
+	this->numberValue = (float)number * (1 << this->fractionalBits);
 }
 
 Fixed::~Fixed( void ) {
@@ -55,12 +55,8 @@ void	Fixed::setRawBits( int const raw ) {
 	this->numberValue = raw;
 }
 
-float	Fixed::toFloat( void ) const { //WRONG
-	float	num;
-
-	num = this->numberValue;
-
-	return num;
+float	Fixed::toFloat( void ) const {
+	return (float)this->numberValue / (float)(1 << this->fractionalBits);
 }
 
 int	Fixed::toInt( void ) const {
