@@ -1,3 +1,4 @@
+// copilot: disable
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,7 +7,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:53 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 15:42:11 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:51:46 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +15,36 @@
 
 // Default constructor.
 Fixed::Fixed( void ) {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 	this->value = 0;
 }
 
 // Copy constructor.
 Fixed::Fixed( const Fixed &src ) {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 // Int constructor.
 Fixed::Fixed( const int integer ) {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	this->value = integer << this->fractionalBits;
 }
 
 // Float constructor.
 Fixed::Fixed( const float number ) {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	this->value = roundf((float)number * (1 << this->fractionalBits));
 }
 
 // Destructor.
 Fixed::~Fixed( void ) {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 // Copy assignment operator.
 Fixed& Fixed::operator= ( const Fixed &src ) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 
 	if (this != &src)
 		this->setRawBits(src.getRawBits());
@@ -125,9 +126,18 @@ bool operator!=( const Fixed& fixed1, const Fixed& fixed2 ) {
 
 // Overload of the addition '+' operator
 Fixed operator+( const Fixed& fixed1, const Fixed& fixed2) {
-	Fixed result; // Should this use the keyword new?
+	Fixed result;
 
 	result.setRawBits(fixed1.getRawBits() + fixed2.getRawBits());
+
+	return result;
+}
+
+// Overload of the subtraction '-' operator
+Fixed operator-( const Fixed& fixed1, const Fixed& fixed2 ) {
+	Fixed result;
+
+	result.setRawBits(fixed1.getRawBits() - fixed2.getRawBits());
 
 	return result;
 }

@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:47:40 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 15:40:58 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:16:18 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,15 @@ int main( void ) {
 	// 	std::cout << "a is equal to b" << std::endl;
 	// if (a != b)
 	// 	std::cout << "a is different than b" << std::endl;
+
 	Fixed c(a + b);
 
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << c << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
+	std::cout << "c = " << c << std::endl;
+	std::cout << "c + b = " << c + b << std::endl;
+	std::cout << "c + b - a = " << c + b - a << std::endl;
+
 	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
 	// std::cout << a << std::endl;
