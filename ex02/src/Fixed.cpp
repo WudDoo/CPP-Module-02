@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:53 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 14:26:24 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:29:26 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,15 +82,22 @@ std::ostream & operator<< (std::ostream &out, const Fixed& fixed ) {
 }
 
 // Overload of the greater than '>' operator
-bool operator> (const Fixed& fixed1, const Fixed& fixed2) {
+bool	operator> (const Fixed& fixed1, const Fixed& fixed2) {
 	if ( fixed1.getRawBits() > fixed2.getRawBits())
 		return true;
 	return false;
 }
 
 // Overload of the less than '<' operator
-bool operator< (const Fixed& fixed1, const Fixed& fixed2) {
+bool	operator< (const Fixed& fixed1, const Fixed& fixed2) {
 	if ( fixed1.getRawBits() < fixed2.getRawBits())
+		return true;
+	return false;
+}
+
+// Overload of the greater than/equal to '>=' operator
+bool	operator>= (const Fixed& fixed1, const Fixed& fixed2) {
+	if ( fixed1.getRawBits() >= fixed2.getRawBits())
 		return true;
 	return false;
 }

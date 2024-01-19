@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:47:40 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 14:26:53 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:29:44 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int main( void ) {
 	if (a > b)
 	{
 		std::cout << "a is larger" << std::endl;
+	}
+	if (a >= b)
+	{
+		std::cout << "a is larger or equal" << std::endl;
 	}
 	if (a < b)
 	{
