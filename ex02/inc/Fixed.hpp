@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:17:54 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 14:30:39 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:39:27 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,20 @@ class Fixed {
 		Fixed & operator = ( const Fixed &src );
 
 		// Setter / Getter
-		void	setRawBits( int const raw );
-		int	getRawBits( void ) const;
+		void setRawBits( int const raw );
+		int getRawBits( void ) const;
 
 		// Conversion to float and int
-		float	toFloat( void ) const;
-		int	toInt( void ) const;
+		float toFloat( void ) const;
+		int toInt( void ) const;
 
 		// Comparison operands
-		friend bool	operator>(const Fixed& fixed1, const Fixed& fixed2);
-		friend bool	operator<(const Fixed& fixed1, const Fixed& fixed2);
-		friend bool	operator>=(const Fixed& fixed1, const Fixed& fixed2);
-		friend bool	operator<=(const Fixed& fixed1, const Fixed& fixed2);
+		friend bool operator>( const Fixed& fixed1, const Fixed& fixed2 );
+		friend bool operator<( const Fixed& fixed1, const Fixed& fixed2 );
+		friend bool operator>=( const Fixed& fixed1, const Fixed& fixed2 );
+		friend bool operator<=( const Fixed& fixed1, const Fixed& fixed2 );
+		friend bool operator==( const Fixed& fixed1, const Fixed& fixed2 );
+		friend bool operator!=( const Fixed& fixed1, const Fixed& fixed2 );
 };
 
 // Overload of the insertion («) operator, inserts a floating-point
