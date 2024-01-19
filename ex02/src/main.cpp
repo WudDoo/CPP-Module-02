@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:47:40 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 17:20:19 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:34:19 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main( void ) {
 
-	Fixed a (1234.4321f);
+	Fixed a (0.5f);
 	Fixed b (0.5f);
 
 	// if (a > b)
@@ -39,6 +39,7 @@ int main( void ) {
 	std::cout << "c + b = " << c + b << std::endl;
 	std::cout << "c + b - a = " << c + b - a << std::endl;
 	std::cout << "a * b = " << a * b << std::endl;
+	std::cout << "a / b = " << a / b << std::endl;
 
 	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 

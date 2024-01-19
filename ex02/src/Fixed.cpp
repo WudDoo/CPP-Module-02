@@ -150,3 +150,12 @@ Fixed operator*( const Fixed& fixed1, const Fixed& fixed2 ) {
 
 	return result;
 }
+
+// Overload of the division '/' operator
+Fixed operator/( const Fixed& fixed1, const Fixed& fixed2 ) {
+	Fixed result;
+
+	result.setRawBits((fixed1.getRawBits() << Fixed::fractionalBits) / fixed2.getRawBits());
+
+	return result;
+}
