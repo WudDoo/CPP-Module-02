@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:47:40 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 14:29:44 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:31:53 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main( void ) {
 
-	Fixed a (4);
+	Fixed a (6);
 	Fixed b (5.25f);
 
 	if (a > b)
@@ -29,6 +29,10 @@ int main( void ) {
 	if (a < b)
 	{
 		std::cout << "a is smaller" << std::endl;
+	}
+	if (a <= b)
+	{
+		std::cout << "a is smaller or equal" << std::endl;
 	}
 	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 

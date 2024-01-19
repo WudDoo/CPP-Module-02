@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:53 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 14:29:26 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:31:30 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,24 +52,24 @@ Fixed& Fixed::operator= ( const Fixed &src ) {
 }
 
 // Getter for this->value.
-int	Fixed::getRawBits( void ) const {
+int Fixed::getRawBits( void ) const {
 	//std::cout << "getRawBits member function called" << std::endl;
 	return this->value;
 }
 
 // Setter for this->value.
-void	Fixed::setRawBits( int const raw ) {
+void Fixed::setRawBits( int const raw ) {
 	//std::cout << "setRawBits member function called" << std::endl;
 	this->value = raw;
 }
 
 // Converts the fixed-point value to a floating-point.
-float	Fixed::toFloat( void ) const {
+float Fixed::toFloat( void ) const {
 	return (float)this->value / (float)(1 << this->fractionalBits);
 }
 
 // Converts the fixed-point value to an integer.
-int	Fixed::toInt( void ) const {
+int Fixed::toInt( void ) const {
 	return this->value >> this->fractionalBits;
 }
 
@@ -82,22 +82,29 @@ std::ostream & operator<< (std::ostream &out, const Fixed& fixed ) {
 }
 
 // Overload of the greater than '>' operator
-bool	operator> (const Fixed& fixed1, const Fixed& fixed2) {
+bool operator> (const Fixed& fixed1, const Fixed& fixed2) {
 	if ( fixed1.getRawBits() > fixed2.getRawBits())
 		return true;
 	return false;
 }
 
 // Overload of the less than '<' operator
-bool	operator< (const Fixed& fixed1, const Fixed& fixed2) {
+bool operator< (const Fixed& fixed1, const Fixed& fixed2) {
 	if ( fixed1.getRawBits() < fixed2.getRawBits())
 		return true;
 	return false;
 }
 
 // Overload of the greater than/equal to '>=' operator
-bool	operator>= (const Fixed& fixed1, const Fixed& fixed2) {
+bool operator>= (const Fixed& fixed1, const Fixed& fixed2) {
 	if ( fixed1.getRawBits() >= fixed2.getRawBits())
+		return true;
+	return false;
+}
+
+// Overload of the less than/equal to '<=' operator
+bool operator<= (const Fixed& fixed1, const Fixed& fixed2) {
+	if ( fixed1.getRawBits() <= fixed2.getRawBits())
 		return true;
 	return false;
 }
