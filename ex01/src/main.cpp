@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:45:44 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/18 17:31:27 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:33:16 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main( void ) {
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl; //This is outputting different than the subject
+	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
 
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;

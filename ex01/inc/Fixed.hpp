@@ -6,14 +6,15 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:17:54 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/18 16:54:25 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:31:51 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include <iostream>
+# include <iostream>
+# include <cmath>
 
 class Fixed {
 	private:
@@ -36,7 +37,8 @@ class Fixed {
 		float	toFloat( void ) const;
 		int	toInt( void ) const;
 
-		friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif
