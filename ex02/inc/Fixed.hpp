@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:17:54 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 16:18:39 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:19:35 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ class Fixed {
 		// Should they return references?
 		friend Fixed operator+( const Fixed& fixed1, const Fixed& fixed2 );
 		friend Fixed operator-( const Fixed& fixed1, const Fixed& fixed2 );
+		friend Fixed operator*( const Fixed& fixed1, const Fixed& fixed2 );
 };
 
 // Overload of the insertion («) operator, inserts a floating-point

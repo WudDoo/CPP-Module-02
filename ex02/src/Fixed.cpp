@@ -141,3 +141,12 @@ Fixed operator-( const Fixed& fixed1, const Fixed& fixed2 ) {
 
 	return result;
 }
+
+// Overload of the multiplication '*' operator
+Fixed operator*( const Fixed& fixed1, const Fixed& fixed2 ) {
+	Fixed result;
+
+	result.setRawBits((fixed1.getRawBits() * fixed2.getRawBits()) >> Fixed::fractionalBits);
+
+	return result;
+}
