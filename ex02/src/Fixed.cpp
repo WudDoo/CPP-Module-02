@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:53 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 14:40:16 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:42:11 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,13 @@ bool operator!=( const Fixed& fixed1, const Fixed& fixed2 ) {
 	if (fixed1.getRawBits() != fixed2.getRawBits())
 		return true;
 	return false;
+}
+
+// Overload of the addition '+' operator
+Fixed operator+( const Fixed& fixed1, const Fixed& fixed2) {
+	Fixed result; // Should this use the keyword new?
+
+	result.setRawBits(fixed1.getRawBits() + fixed2.getRawBits());
+
+	return result;
 }
