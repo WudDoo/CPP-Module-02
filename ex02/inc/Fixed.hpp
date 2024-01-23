@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:17:54 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/23 17:49:43 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:30:53 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,12 @@ class Fixed {
 		Fixed operator-( const Fixed& other );
 		Fixed operator*( const Fixed& other );
 		Fixed operator/( const Fixed& other );
+
+		// Increment/Decrement operators
+		Fixed & operator++( void );
+		Fixed operator++( int );
+		Fixed & operator--( void );
+		Fixed operator--( int );
 		
 };
 

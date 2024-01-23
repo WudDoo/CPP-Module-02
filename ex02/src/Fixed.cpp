@@ -83,53 +83,80 @@ std::ostream & operator<< ( std::ostream &out, const Fixed& fixed ) {
 }
 
 // -------------------------- Comparison operators -----------------------------
-// Overload of the greater than '>' operator
+// Greater than '>' operator
 bool Fixed::operator> ( const Fixed& other ) {
 	return ( this->getRawBits() > other.getRawBits() );
 }
 
-// Overload of the less than '<' operator
+// Less than '<' operator
 bool Fixed::operator< ( const Fixed& other ) {
 	return ( this->getRawBits() < other.getRawBits() );
 }
 
-// Overload of the greater than/equal to '>=' operator
+// Greater than/equal to '>=' operator
 bool Fixed::operator>= ( const Fixed& other ) {
 	return !( this->getRawBits() < other.getRawBits() );
 }
 
-// Overload of the less than/equal to '<=' operator
+// Less than/equal to '<=' operator
 bool Fixed::operator<= ( const Fixed& other ) {
 	return !( this->getRawBits() > other.getRawBits() );
 }
 
-// Overload of the equal to '==' operator
+// Equal to '==' operator
 bool Fixed::operator== ( const Fixed& other ) {
 	return ( this->getRawBits() == other.getRawBits() );
 }
 
-// Overload of the different than '!=' operator
+// Different than '!=' operator
 bool Fixed::operator!=( const Fixed& other ) {
 	return ( this->getRawBits() != other.getRawBits() );
 }
 
 // -------------------------- Arithmetic operators -----------------------------
-// Overload of the addition '+' operator
+// Addition '+' operator
 Fixed Fixed::operator+(const Fixed& other) {
 	return Fixed( this->toFloat() + other.toFloat() );
 }
 
-// Overload of the subtraction '-' operator
+// Subtraction '-' operator
 Fixed Fixed::operator-( const Fixed& other ) {
 	return Fixed( this->toFloat() - other.toFloat() );
 }
 
-// Overload of the multiplication '*' operator
+// Multiplication '*' operator
 Fixed Fixed::operator*( const Fixed& other ) {
 	return Fixed( this->toFloat() * other.toFloat() );
 }
 
-// Overload of the division '/' operator
+// Division '/' operator
 Fixed Fixed::operator/( const Fixed& other ) {
 	return Fixed( this->toFloat() / other.toFloat() );
+}
+
+// -------------------------- Increment/Decrement operators --------------------
+// Pre-increment operator
+Fixed& Fixed::operator++( void ) {
+	this->value++;
+	return *this;
+}
+
+// Post-increment operator
+Fixed Fixed::operator++( int ) {
+	Fixed temp( this->toFloat() );
+	this->value++;
+	return temp;
+}
+
+// Pre-decrement operator
+Fixed& Fixed::operator--( void ) {
+	this->value--;
+	return *this;
+}
+
+// Post-decrement operator
+Fixed Fixed::operator--( int ) {
+	Fixed temp( this->toFloat() );
+	this->value--;
+	return temp;
 }
