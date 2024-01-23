@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:47:40 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/19 17:34:19 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:02:36 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int main( void ) {
 
-	Fixed a (0.5f);
-	Fixed b (0.5f);
+	Fixed a (1.5f);
+	Fixed b (1.5f);
 
 	// if (a > b)
 	// 	std::cout << "a is larger than b" << std::endl;

@@ -84,45 +84,33 @@ std::ostream & operator<< ( std::ostream &out, const Fixed& fixed ) {
 
 // -------------------------- Comparison operators -----------------------------
 // Overload of the greater than '>' operator
-bool operator> ( const Fixed& fixed1, const Fixed& fixed2 ) {
-	if (fixed1.getRawBits() > fixed2.getRawBits())
-		return true;
-	return false;
+bool Fixed::operator> ( const Fixed& other ) {
+	return ( this->getRawBits() > other.getRawBits() );
 }
 
 // Overload of the less than '<' operator
-bool operator< ( const Fixed& fixed1, const Fixed& fixed2 ) {
-	if (fixed1.getRawBits() < fixed2.getRawBits())
-		return true;
-	return false;
+bool Fixed::operator< ( const Fixed& other ) {
+	return ( this->getRawBits() < other.getRawBits() );
 }
 
 // Overload of the greater than/equal to '>=' operator
-bool operator>= ( const Fixed& fixed1, const Fixed& fixed2 ) {
-	if (fixed1.getRawBits() >= fixed2.getRawBits())
-		return true;
-	return false;
+bool Fixed::operator>= ( const Fixed& other ) {
+	return !( this->getRawBits() < other.getRawBits() );
 }
 
 // Overload of the less than/equal to '<=' operator
-bool operator<= ( const Fixed& fixed1, const Fixed& fixed2 ) {
-	if (fixed1.getRawBits() <= fixed2.getRawBits())
-		return true;
-	return false;
+bool Fixed::operator<= ( const Fixed& other ) {
+	return !( this->getRawBits() > other.getRawBits() );
 }
 
 // Overload of the equal to '==' operator
-bool operator== ( const Fixed& fixed1, const Fixed& fixed2 ) {
-	if (fixed1.getRawBits() == fixed2.getRawBits())
-		return true;
-	return false;
+bool Fixed::operator== ( const Fixed& other ) {
+	return ( this->getRawBits() == other.getRawBits() );
 }
 
 // Overload of the different than '!=' operator
-bool operator!=( const Fixed& fixed1, const Fixed& fixed2 ) {
-	if (fixed1.getRawBits() != fixed2.getRawBits())
-		return true;
-	return false;
+bool Fixed::operator!=( const Fixed& other ) {
+	return ( this->getRawBits() != other.getRawBits() );
 }
 
 // -------------------------- Arithmetic operators -----------------------------

@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:17:54 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/23 17:44:47 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:49:43 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ class Fixed {
 		int toInt( void ) const;
 
 		// Comparison operators
-		friend bool operator>( const Fixed& fixed1, const Fixed& fixed2 );
-		friend bool operator<( const Fixed& fixed1, const Fixed& fixed2 );
-		friend bool operator>=( const Fixed& fixed1, const Fixed& fixed2 );
-		friend bool operator<=( const Fixed& fixed1, const Fixed& fixed2 );
-		friend bool operator==( const Fixed& fixed1, const Fixed& fixed2 );
-		friend bool operator!=( const Fixed& fixed1, const Fixed& fixed2 );
+		bool operator>( const Fixed& other );
+		bool operator<( const Fixed& other );
+		bool operator>=( const Fixed& other );
+		bool operator<=( const Fixed& other );
+		bool operator==( const Fixed& other );
+		bool operator!=( const Fixed& other );
 
 		// Arithmetic operators
 		// Should the arithmetic operators use the keyword new?
