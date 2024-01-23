@@ -82,6 +82,7 @@ std::ostream & operator<< ( std::ostream &out, const Fixed& fixed ) {
 	return (out);
 }
 
+// -------------------------- Comparison operators -----------------------------
 // Overload of the greater than '>' operator
 bool operator> ( const Fixed& fixed1, const Fixed& fixed2 ) {
 	if (fixed1.getRawBits() > fixed2.getRawBits())
@@ -124,38 +125,23 @@ bool operator!=( const Fixed& fixed1, const Fixed& fixed2 ) {
 	return false;
 }
 
+// -------------------------- Arithmetic operators -----------------------------
 // Overload of the addition '+' operator
-Fixed operator+( const Fixed& fixed1, const Fixed& fixed2) {
-	Fixed result;
-
-	result.setRawBits(fixed1.getRawBits() + fixed2.getRawBits());
-
-	return result;
+Fixed Fixed::operator+(const Fixed& other) {
+	return Fixed( this->toFloat() + other.toFloat() );
 }
 
 // Overload of the subtraction '-' operator
-Fixed operator-( const Fixed& fixed1, const Fixed& fixed2 ) {
-	Fixed result;
-
-	result.setRawBits(fixed1.getRawBits() - fixed2.getRawBits());
-
-	return result;
+Fixed Fixed::operator-( const Fixed& other ) {
+	return Fixed( this->toFloat() - other.toFloat() );
 }
 
 // Overload of the multiplication '*' operator
-Fixed operator*( const Fixed& fixed1, const Fixed& fixed2 ) {
-	Fixed result;
-
-	result.setRawBits((fixed1.getRawBits() * fixed2.getRawBits()) >> Fixed::fractionalBits);
-
-	return result;
+Fixed Fixed::operator*( const Fixed& other ) {
+	return Fixed( this->toFloat() * other.toFloat() );
 }
 
 // Overload of the division '/' operator
-Fixed operator/( const Fixed& fixed1, const Fixed& fixed2 ) {
-	Fixed result;
-
-	result.setRawBits((fixed1.getRawBits() << Fixed::fractionalBits) / fixed2.getRawBits());
-
-	return result;
+Fixed Fixed::operator/( const Fixed& other ) {
+	return Fixed( this->toFloat() / other.toFloat() );
 }
