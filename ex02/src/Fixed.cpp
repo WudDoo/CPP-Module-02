@@ -160,3 +160,32 @@ Fixed Fixed::operator--( int ) {
 	this->value--;
 	return temp;
 }
+
+// -------------------------- Min and Max functions ----------------------------
+// Min - no const
+Fixed& Fixed::min( Fixed& fixed1, Fixed& fixed2 ) {
+	if ( fixed1.getRawBits() > fixed2.getRawBits() )
+		return fixed2;
+	return fixed1;
+}
+
+// Min - const
+const Fixed& Fixed::min( const Fixed& fixed1, const Fixed& fixed2 ) {
+	if ( fixed1.getRawBits() > fixed2.getRawBits() )
+		return fixed2;
+	return fixed1;
+}
+
+// Max - no const
+Fixed& Fixed::max( Fixed& fixed1, Fixed& fixed2 ) {
+	if ( fixed1.getRawBits() < fixed2.getRawBits() )
+		return fixed2;
+	return fixed1;
+}
+
+// Max - const
+const Fixed& Fixed::max( const Fixed& fixed1, const Fixed& fixed2 ) {
+	if ( fixed1.getRawBits() < fixed2.getRawBits() )
+		return fixed2;
+	return fixed1;
+}

@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:47:40 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/23 18:30:27 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:41:21 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main( void ) {
 
 	std::cout << b << std::endl;
 
-	// std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 
 	return 0;
 }

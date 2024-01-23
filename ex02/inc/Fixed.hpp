@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:17:54 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/23 18:30:53 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:42:14 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,12 @@ class Fixed {
 		Fixed operator++( int );
 		Fixed & operator--( void );
 		Fixed operator--( int );
-		
+
+		// Min and Max functions
+		static Fixed & min( Fixed& fixed1, Fixed& fixed2 );
+		static const Fixed & min( const Fixed& fixed1, const Fixed& fixed2 );
+		static Fixed & max( Fixed& fixed1, Fixed& fixed2 );
+		static const Fixed & max( const Fixed& fixed1, const Fixed& fixed2 );
 };
 
 // Overload of the insertion («) operator, inserts a floating-point
