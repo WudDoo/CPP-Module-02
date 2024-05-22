@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:17:54 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/22 13:05:49 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:23:00 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ class Fixed {
 		// Copy assignment operator
 		Fixed & operator = ( const Fixed &src );
 
-		// Setter
-		void	setRawBits( int const raw );
-
 		// Getter
 		int	getRawBits( void ) const;
+
+		// Setter
+		void	setRawBits( int const raw );
 };
 
 #endif
