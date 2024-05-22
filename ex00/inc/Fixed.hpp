@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:17:54 by mortins-          #+#    #+#             */
-/*   Updated: 2024/01/18 15:56:40 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:05:49 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,21 @@ class Fixed {
 		static const int	fractionalBits = 8;
 
 	public:
+		// Contructors
 		Fixed( void );
 		Fixed( const Fixed &src );
+
+		// Destructor
 		~Fixed( void );
+
+		// Copy assignment operator
 		Fixed & operator = ( const Fixed &src );
 
-		int	getRawBits( void ) const;
+		// Setter
 		void	setRawBits( int const raw );
+
+		// Getter
+		int	getRawBits( void ) const;
 };
 
 #endif
