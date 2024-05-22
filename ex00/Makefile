@@ -3,16 +3,16 @@ NAME = fixed
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
-OBJ_DIR = .obj
 SRC_DIR = src
 INC_DIR = inc
+OBJ_DIR = .obj
 
 SRC_FILES = Fixed.cpp main.cpp
 INC = Fixed.hpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
-OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 HEADERS = $(addprefix $(INC_DIR)/, $(INC))
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
 all: $(NAME)
 
