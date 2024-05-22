@@ -1,14 +1,18 @@
 NAME = fixed
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 
 OBJ_DIR = .obj
+SRC_DIR = src
+INC_DIR = inc
 
-SRCS = src/Fixed.cpp src/main.cpp
+SRC_FILES = Fixed.cpp main.cpp
+INC = Fixed.hpp
+
+SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
-
-HEADERS = inc/Fixed.hpp
+HEADERS = $(addprefix $(INC_DIR)/, $(INC))
 
 all: $(NAME)
 
@@ -30,4 +34,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+val: all
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./$(NAME)
+
+.PHONY: all clean fclean re val
