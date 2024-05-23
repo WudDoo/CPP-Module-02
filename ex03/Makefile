@@ -16,11 +16,11 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(HEADERS)
+$(NAME): $(OBJS) $(HDRS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
 	@echo "Compiled!"
 
-$(OBJ_DIR)/%.o: %.cpp $(HEADERS)
+$(OBJ_DIR)/%.o: %.cpp $(HDRS)
 	@mkdir -p $(OBJ_DIR)/$(dir $<)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
