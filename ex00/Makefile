@@ -8,10 +8,10 @@ INC_DIR = inc
 OBJ_DIR = .obj
 
 SRC_FILES = Fixed.cpp main.cpp
-INC = Fixed.hpp
+INC_FILES = Fixed.hpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
-HEADERS = $(addprefix $(INC_DIR)/, $(INC))
+HDRS = $(addprefix $(INC_DIR)/, $(INC_FILES))
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
 all: $(NAME)

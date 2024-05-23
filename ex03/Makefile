@@ -3,12 +3,16 @@ NAME = fixed
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
+SRC_DIR = src
+INC_DIR = inc
 OBJ_DIR = .obj
 
-SRCS = src/Fixed.cpp src/Point.cpp
-OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
+SRC_FILES = Fixed.cpp Point.cpp
+INC_FILES = Fixed.hpp Point.hpp
 
-HEADERS = inc/Fixed.hpp inc/Point.hpp
+SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+HDRS = $(addprefix $(INC_DIR)/, $(INC_FILES))
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
 all: $(NAME)
 
@@ -30,7 +34,10 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+val: all
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes ./$(NAME)
+
+.PHONY: all clean fclean re val
 
 # good website to visualize data in a grid
 # https://www.geogebra.org/m/JMMKv7cx
