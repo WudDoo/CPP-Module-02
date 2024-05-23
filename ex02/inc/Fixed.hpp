@@ -32,43 +32,43 @@ class Fixed {
 		~Fixed( void );
 
 		// Copy assignment operator
-		Fixed & operator = ( const Fixed &src );
+		Fixed&	operator = ( const Fixed &src );
 
 		// Setter / Getter
-		void setRawBits( int const raw );
-		int getRawBits( void ) const;
+		void	setRawBits( int const raw );
+		int		getRawBits( void ) const;
 
 		// Conversion to float and int
-		float toFloat( void ) const;
-		int toInt( void ) const;
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
 
-		// Comparison operators
-		bool operator>( const Fixed& other );
-		bool operator<( const Fixed& other );
-		bool operator>=( const Fixed& other );
-		bool operator<=( const Fixed& other );
-		bool operator==( const Fixed& other );
-		bool operator!=( const Fixed& other );
+		// Comparison operators overload
+		bool	operator > ( const Fixed& other );
+		bool	operator < ( const Fixed& other );
+		bool	operator >= ( const Fixed& other );
+		bool	operator <= ( const Fixed& other );
+		bool	operator == ( const Fixed& other );
+		bool	operator != ( const Fixed& other );
 
-		// Arithmetic operators
+		// Arithmetic operators overload
 		// Should the arithmetic operators use the keyword new?
 		// Should they return references?
-		Fixed operator+( const Fixed& other );
-		Fixed operator-( const Fixed& other );
-		Fixed operator*( const Fixed& other );
-		Fixed operator/( const Fixed& other );
+		Fixed	operator + ( const Fixed& other );
+		Fixed	operator - ( const Fixed& other );
+		Fixed	operator * ( const Fixed& other );
+		Fixed	operator / ( const Fixed& other );
 
 		// Increment/Decrement operators
-		Fixed & operator++( void );
-		Fixed operator++( int );
-		Fixed & operator--( void );
-		Fixed operator--( int );
+		Fixed&	operator ++ ( void );
+		Fixed	operator ++ ( int );
+		Fixed&	operator -- ( void );
+		Fixed	operator -- ( int );
 
 		// Min and Max functions
-		static Fixed & min( Fixed& fixed1, Fixed& fixed2 );
-		static const Fixed & min( const Fixed& fixed1, const Fixed& fixed2 );
-		static Fixed & max( Fixed& fixed1, Fixed& fixed2 );
-		static const Fixed & max( const Fixed& fixed1, const Fixed& fixed2 );
+		static Fixed&		min( Fixed& fixed1, Fixed& fixed2 );
+		static const Fixed&	min( const Fixed& fixed1, const Fixed& fixed2 );
+		static Fixed&		max( Fixed& fixed1, Fixed& fixed2 );
+		static const Fixed&	max( const Fixed& fixed1, const Fixed& fixed2 );
 };
 
 // Overload of the insertion («) operator, inserts a floating-point
