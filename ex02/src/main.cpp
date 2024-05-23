@@ -56,3 +56,5 @@ int main( void ) {
 
 	return 0;
 }
+
+// Should the arithmetic operators use the keyword new?
