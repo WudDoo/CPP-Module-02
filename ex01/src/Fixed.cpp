@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:53 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/27 13:49:54 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:06:16 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,22 @@ float	Fixed::toFloat( void ) const {
 
 // Converts the fixed-point value to an integer
 int	Fixed::toInt( void ) const {
+	/* Using bitshifting
+		while (looking at a fractional bit)
+		{
+			if (bit is not 1)
+				return ((this->value >> fractionalBits) + 1);
+		}
+		return (this->value >> fractionalBits);
+	 */
+
+	/* Using roundf
+		if (fractional <= -0.5)
+			return ((int)roundf(this->toFloat()) + 1)
+		else
+			return ((int)roundf(this->toFloat()));
+	 */
 	return this->value >> this->fractionalBits;
-	// return ((int)roundf(this->toFloat()));
 }
 
 // Overload of the insertion '«' operator. Inserts a floating-point representation
