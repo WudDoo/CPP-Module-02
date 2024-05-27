@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:49:53 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/27 12:36:25 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/27 12:41:42 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Default Constructor
 Fixed::Fixed( void ) {
 	std::cout << "Default constructor called" << std::endl;
-	this->numberValue = 0;
+	this->value = 0;
 }
 
 // Copy constructor
@@ -27,13 +27,13 @@ Fixed::Fixed( const Fixed &src ) {
 // Int constructor
 Fixed::Fixed( const int integer ) {
 	std::cout << "Int constructor called" << std::endl;
-	this->numberValue = integer << this->fractionalBits;
+	this->value = integer << this->fractionalBits;
 }
 
 // Float constructor
 Fixed::Fixed( const float number ) {
 	std::cout << "Float constructor called" << std::endl;
-	this->numberValue = roundf((float)number * (1 << this->fractionalBits));
+	this->value = roundf((float)number * (1 << this->fractionalBits));
 }
 
 // Destructor
@@ -51,26 +51,26 @@ Fixed& Fixed::operator= ( const Fixed &src ) {
 	return *this;
 }
 
-// Getter for this->numberValue
+// Getter for this->value
 int	Fixed::getRawBits( void ) const {
 	//std::cout << "getRawBits member function called" << std::endl;
-	return this->numberValue;
+	return this->value;
 }
 
 // Setter for this->numberValue
 void	Fixed::setRawBits( int const raw ) {
 	//std::cout << "setRawBits member function called" << std::endl;
-	this->numberValue = raw;
+	this->value = raw;
 }
 
 // Converts the fixed-point value to a floating-point
 float	Fixed::toFloat( void ) const {
-	return (float)this->numberValue / (float)(1 << this->fractionalBits);
+	return (float)this->value / (float)(1 << this->fractionalBits);
 }
 
 // Converts the fixed-point value to an integer
 int	Fixed::toInt( void ) const {
-	return this->numberValue >> this->fractionalBits;
+	return this->value >> this->fractionalBits;
 }
 
 // Overload of the insertion '«' operator. Inserts a floating-point representation
