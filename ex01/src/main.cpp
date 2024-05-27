@@ -6,12 +6,13 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:45:44 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/27 12:49:15 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/27 13:57:36 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp"
 #include <iostream>
+// #include <bitset> // Comment before submission
 
 int	main( void )	{
 	{
@@ -33,5 +34,17 @@ int	main( void )	{
 		std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 		std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	}
+	// { // Comment before submission
+	// 	std::cout << std::endl << std::endl;
+	// 	std::cout << "\e[90m\e[107mTest for negative float to int conversion:\e[0m" << std::endl;
+	// 	Fixed const	a( -105.01f );
+
+	// 	std::cout << "a is " << a << std::endl;
+	// 	std::cout << "a is " << std::bitset<32>(a.getRawBits()) << std::endl;
+
+	// 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	// 	std::cout << "a is " << std::bitset<32>(a.toInt()) << std::endl;
+	// 	std::cout << "\e[90m\e[107mREMEMBER TO COMMENT THIS BEFORE SUBMISSION\e[0m" << std::endl;
+	// }
 	return 0;
 }
