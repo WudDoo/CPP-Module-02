@@ -71,7 +71,19 @@ float	Fixed::toFloat( void )	const {
 
 // Converts the fixed-point value to an integer
 int	Fixed::toInt( void )	const {
-	return this->value >> this->fractionalBits;
+	int	i = 0;
+
+	if (this->getRawBits() < 0)
+	{
+		while (i < fractionalBits)
+		{
+			if ((this->getRawBits() >> i) & 1)
+				return ((this->value >> fractionalBits) + 1);
+			i++;
+		}
+	}
+
+	return this->value >> fractionalBits;
 }
 
 // Overload of the insertion '«' operator. Inserts a floating-point representation
